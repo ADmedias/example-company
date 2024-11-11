@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+        h1 {
+            color: #333;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .star-button {
+            background-color: #ffdd57;
+            color: #333;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        <!-- .star-button:hover { -->
+            background-color: #ffc107;
+        }
+    </style>
+    <script>
+        function rate(rating) {
+            if (rating === 5) {
+                // Redirect to Google Maps for 5-star rating
+                window.location.href = "https://www.google.com/maps/place/HOTEL+PRESTIGE/@40.7269363,22.9146624,15z/data=!4m11!3m10!1s0x14a830d50184c309:0xb057c610d437829a!5m2!4m1!1i2!8m2!3d40.7183315!4d22.9034812!9m1!1b1!16s%2Fg%2F11rs0bzpg?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D";
+            } else {
+                // Redirect to custom feedback page for ratings below 5 stars
+                window.location.href = "feedback.html";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Rate Us</h1>
+    <p>Please rate our service by selecting a star rating below:</p>
+    <div class="stars">
+        <button onclick="rate(5)" class="star-button">5 Stars</button>
+        <button onclick="rate(4)" class="star-button">4 Stars</button>
+        <button onclick="rate(3)" class="star-button">3 Stars</button>
+        <button onclick="rate(2)" class="star-button">2 Stars</button>
+        <button onclick="rate(1)" class="star-button">1 Star</button>
+    </div>
+</div>
+
+</body>
+</html>
